@@ -10,5 +10,5 @@ import { ArticleComponentComponent } from './article-component/article-component
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'wild-blog';
+  title = 'Bienvenue sur le wild blog de Eloïse';
 }
