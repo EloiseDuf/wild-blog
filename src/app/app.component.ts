@@ -14,12 +14,12 @@ export class AppComponent {
   title:string = 'Bienvenue sur le wild blog de Eloïse';
   textColor:string= "black";
 
-  changeColor(textColor:string){
+  changeColor(textColor:string):string{
     return this.textColor=textColor;
   }
 
-  noArticlePublished(): boolean {
-    return !this.articles.some(article => article.isPublished);
+  ArticlePublished(): boolean {
+    return this.articles.some(article => article.isPublished);
   }
   articles = [
     { 
