@@ -18,6 +18,9 @@ export class AppComponent {
     return this.textColor=textColor;
   }
 
+  noArticlePublished(): boolean {
+    return !this.articles.some(article => article.isPublished);
+  }
   articles = [
     { 
       title: 'Angular 16: Les nouveautés', 
