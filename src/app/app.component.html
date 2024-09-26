@@ -1,7 +1,20 @@
 
 <main class="main">
     <h1>{{title}}</h1>
-    <app-article-component></app-article-component>
+
+
+            @for (article of articles;track $index){
+                @if (article.isPublished){
+                    <div class="cardContener" [ngClass]="{'popular-article': article.likes >= 100}" [ngStyle]="{'color': article.likes >200 ? changeColor('yellow'): changeColor('black')}">
+                        <h1>{{article.title}}</h1>
+                        <img [src]="article.image"/>
+                        <p>Auteur : {{article.author}}</p>
+                        <p>{{article.content}}</p>
+                        <p>{{article.comment}}</p>
+                    </div>
+               }
+            }
+    <!-- <app-article-component></app-article-component> -->
 </main>
 
 <router-outlet />
