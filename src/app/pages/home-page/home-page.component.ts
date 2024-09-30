@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ArticleComponentComponent } from '../../components/article-component/article-component.component';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ArticleComponentComponent, CommonModule],
+  imports: [ArticleComponentComponent, CommonModule, RouterLink],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -22,6 +23,7 @@ export class HomePageComponent {
   }
   articles = [
     { 
+      id:1,
       title: 'Angular 16: Les nouveautés', 
       author: 'Alice', 
       content: 'Les nouveautés d\'Angular 16 incluent...', 
@@ -31,6 +33,7 @@ export class HomePageComponent {
       likes: 120 
     },
     { 
+      id:2,
       title: 'Développer une API REST', 
       author: 'Bob', 
       content: 'Développer une API REST nécessite...', 
@@ -40,6 +43,7 @@ export class HomePageComponent {
       likes: 75 
     },
     { 
+      id:3,
       title: 'Pourquoi TypeScript est essentiel ?', 
       author: 'Charlie', 
       content: 'TypeScript apporte de la robustesse...', 
