@@ -1,3 +1,70 @@
-p{
-    color:black;
-}
+$form-bg-color: #f9f9f9;
+$form-border-color: #1d6dc3;
+$input-bg-color: #fff;
+$input-border-color: #0e0202;
+$input-focus-border-color: #007bff;
+$error-text-color: #e21010;
+$button-bg-color: #007bff;
+$button-text-color: #fff;
+
+form {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+    background-color: $form-bg-color;
+    border: 1px solid $form-border-color;
+    border-radius: 5px;
+
+    * {
+        box-sizing: border-box;
+      }
+
+      span {
+        color:$error-text-color;
+      }
+  
+    fieldset {
+      border: none;
+      margin-bottom: 15px;
+      padding: 0;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border-color;
+        border-radius: 5px;
+        background-color: $input-bg-color;
+        transition: border-color 0.6s;
+  
+        &:focus {
+          border: 3px $input-focus-border-color solid;
+          outline: none;
+        }
+      }
+    }
+  
+    button {
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: $button-bg-color;
+      color: $button-text-color;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: darken($button-bg-color, 10%);
+      }
+    }
+  }
