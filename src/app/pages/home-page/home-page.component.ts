@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ArticleComponentComponent } from '../../components/article-component/article-component.component';
+import { ArticleComponent } from '../../components/article/article.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ArticleComponentComponent, CommonModule, RouterLink],
+  imports: [ArticleComponent, CommonModule, RouterLink],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -38,7 +38,7 @@ export class HomePageComponent {
       author: 'Bob', 
       content: 'Développer une API REST nécessite...', 
       image: 'https://via.placeholder.com/350x150',
-      isPublished: false, 
+      isPublished: true, 
       comment: '', 
       likes: 75 
     },

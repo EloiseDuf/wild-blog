@@ -1,30 +1,20 @@
-<div class="cardContener">
+<div class="homeContener">
         <h1>{{title}}</h1>
         <a [routerLink]="['/contact']"><h2>Contact</h2></a>
         <a [routerLink]="['/register']"><h2>S'inscrire</h2></a>
+        <div class="cardsList">
+            @if(ArticlePublished()){
 
-        @if(ArticlePublished()){
+                @for (article of articles;track $index){
+                    
+                    <app-article-component [article]="article"></app-article-component>
+                }  
+            } @else{
 
-            @for (article of articles;track $index){
-                
-                @if (article.isPublished){
-                    <a [routerLink]="['/article', article.id]">
-                        <div class="cardContener" [ngClass]="{'popular-article': article.likes >= 100}" [ngStyle]="{'color': article.likes >200 ? changeColor('yellow'): changeColor('black')}">
-                            <h1>{{article.title}}</h1>
-                            <img [src]="article.image"/>
-                            <p>Auteur : {{article.author}}</p>
-                            <p>{{article.content}}</p>
-                            <p>{{article.comment}}</p>
-                        </div>
-                    </a>
-                }
-            }  
-        } @else{
-
-            <p>Aucun article publié pour le moment</p>
-        }
-        <!-- <app-article-component></app-article-component> -->
-
+                <p>Aucun article publié pour le moment</p>
+            }
+            <!-- <app-article-component></app-article-component> -->
+        </div>
 </div>
 
 
