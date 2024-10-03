@@ -6,6 +6,13 @@
     background-color: red;
   }
 
+  a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+  }
+
 .cardContener {
     width: 400px;
     height:500px;
@@ -14,7 +21,14 @@
     display: flex;
     flex-direction:column;
     align-items:center;
-    justify-content: center;
+    justify-content:space-around;
+
+    .buttonsContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:3px;
+    }
 
         h1 {
             font-size: large;
@@ -23,5 +37,10 @@
 
         p {
             text-align: justify; 
-        }    
+        }   
+        
+        button {
+            width:150px;
+            height: 30px;
+        }
 }

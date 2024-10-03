@@ -2,12 +2,15 @@
         <h1>{{title}}</h1>
         <a [routerLink]="['/contact']"><h2>Contact</h2></a>
         <a [routerLink]="['/register']"><h2>S'inscrire</h2></a>
+        <p>{{notificationLikefromArticle}}</p>
         <div class="cardsList">
             @if(ArticlePublished()){
 
+                
+
                 @for (article of articles;track $index){
                     
-                    <app-article-component [article]="article"></app-article-component>
+                    <app-article-component (notifyLike)="HandlenotificationLikefromArticle($event)" [article]="article"></app-article-component>
                 }  
             } @else{
 

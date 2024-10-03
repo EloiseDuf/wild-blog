@@ -14,6 +14,13 @@ export class HomePageComponent {
   title:string = 'Bienvenue sur le wild blog de Eloïse';
   textColor:string= "black";
 
+  notificationLikefromArticle:string="";
+
+  HandlenotificationLikefromArticle(notification:string){
+    this.notificationLikefromArticle =notification;
+    console.log(this.notificationLikefromArticle);
+  }
+
   changeColor(textColor:string):string{
     return this.textColor=textColor;
   }
