@@ -18,6 +18,14 @@
             }
             <!-- <app-article-component></app-article-component> -->
         </div>
+
+        @for(button of newbuttonColor;track $index){
+
+        <app-button [buttonColor]="button" (infoButtonClic)="sendInfoButtonClicFromChild($event)"></app-button>
+
+         }
+
+         <p>{{notificationFromChild}}</p>
 </div>
 
 
