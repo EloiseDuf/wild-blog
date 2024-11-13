@@ -5,15 +5,15 @@ import { CommonModule } from '@angular/common';
 import { Article } from '../../models/article.models';
 
 @Component({
-  selector: 'app-article-component',
+  selector: 'app-article-detail-component',
   standalone: true,
   imports: [FormsModule,RouterLink,CommonModule],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.scss'
+  templateUrl: './article-detail.component.html',
+  styleUrl: './article-detail.component.scss'
 })
 
 
-export class ArticleComponent {
+export class ArticleDetailComponent {
 textColor:string= "black";
 @Input() article!: Article
 

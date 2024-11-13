@@ -1,21 +1,17 @@
-<button (click)="togglePublication()">{{article.isPublished ? "Publié" : "Dépublié"}}</button>
-
-@if (article.isPublished){
 
         <div class="cardContener" [ngClass]="{'popular-article': article.likes >= 100}" [ngStyle]="{'color': article.likes >200 ? changeColor('yellow'): changeColor('black')}">
             <h1>{{article.title}}</h1>
-            <img [src]="article.image"/>
+            <div class="imgContainer">
+             <img [src]="article.image"/>
+            </div>
             <p>Auteur : {{article.author}}</p>
             <p></p>
+            <p>{{article.content}}</p>
             <p>{{article.comment}}</p>
             <input type="text" [(ngModel)]="article.comment">
             
             <div class="buttonsContainer">
-                <a [routerLink]="['/article', article.id]">
-                    <button>Voir l'article</button>
-                </a>
                 <button (click)="handleClickLikeArticle()"><img src="thumb.svg" alt=""></button>
             </div>
         </div>
    
-}

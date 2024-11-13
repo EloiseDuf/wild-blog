@@ -1,9 +1,7 @@
-<div class="cardContener" >
-    <p>{{articleId}}</p>
-    <!-- <h1>{{article.title}}</h1>
-    <img [src]="article.image"/>
-    <p>Auteur : {{article.author}}</p>
-    <p>{{article.content}}</p>
-    <p>{{article.comment}}</p> -->
-
+<div class="articleContener" >
+    @if(article$ |async; as article){
+        <app-article-detail-component [article]="article"></app-article-detail-component>
+    } @else {
+        <p>Aucun article</p>
+}
 </div>

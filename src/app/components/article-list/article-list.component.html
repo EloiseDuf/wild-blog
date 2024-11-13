@@ -1,0 +1,17 @@
+<div class="cardsList">
+    <p>{{notificationLikefromArticle}}</p>
+    @if((articles$|async)?.length===0){
+
+        <p>Aucun article publié pour le moment</p>
+
+
+    } @else{
+
+        @for (article of articles$ | async;track article.id){
+
+            <app-article-component (notifyLike)="HandlenotificationLikefromArticle($event)" [article]="article"></app-article-component>
+        }  
+
+
+    } 
+</div>

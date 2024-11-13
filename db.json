@@ -1,0 +1,34 @@
+{
+    "articles": [
+      {
+        "id": 1,
+        "title": "Angular 16: Les nouveautés",
+        "author": "Alice",
+        "content": "Angular 16 marque une nouvelle étape dans l'évolution de ce framework très populaire pour le développement d'applications web. Parmi les nouveautés, on retrouve des améliorations en termes de performance et de gestion des données, de nouvelles APIs pour la gestion des formulaires et des composants réutilisables, ainsi que des optimisations pour la compilation et le rendu des applications. Cette version met également l'accent sur la compatibilité avec TypeScript et les améliorations de l'expérience développeur. Grâce à Angular 16, les développeurs bénéficient d'une meilleure flexibilité pour concevoir des applications performantes et évolutives.",
+        "image": "https://via.placeholder.com/350x150",
+        "isPublished": true,
+        "comment": "",
+        "likes": 120
+      },
+      {
+        "id": 2,
+        "title": "Développer une API REST",
+        "author": "Bob",
+        "content": "La création d'une API REST est essentielle pour la communication entre les applications et les serveurs dans les architectures modernes. Cette API permet aux applications web et mobiles de récupérer, envoyer et modifier des données à partir d'un serveur centralisé, offrant ainsi une meilleure flexibilité et un accès universel aux données. Les principes REST garantissent une architecture simple et cohérente, avec l'utilisation des méthodes HTTP standards (GET, POST, PUT, DELETE). Développer une API REST nécessite de comprendre les standards de sécurisation des données, d’optimiser la performance des requêtes et de rendre l'interface aussi intuitive que possible pour les développeurs qui vont l'utiliser.",
+        "image": "https://via.placeholder.com/350x150",
+        "isPublished": true,
+        "comment": "",
+        "likes": 75
+      },
+      {
+        "id": 3,
+        "title": "Pourquoi TypeScript est essentiel ?",
+        "author": "Charlie",
+        "content": "TypeScript est devenu un langage incontournable pour de nombreux développeurs front-end et back-end, en raison de ses fonctionnalités qui apportent une sécurité accrue et une meilleure gestion du code. En offrant un typage statique, TypeScript permet de détecter des erreurs de syntaxe avant même l'exécution du code, réduisant ainsi les bogues et améliorant la robustesse des applications. Il facilite également le travail en équipe grâce à une meilleure documentation des types et rend le code plus lisible et maintenable. Aujourd'hui, TypeScript est largement adopté dans les grandes entreprises pour des projets de grande envergure, car il contribue à la stabilité et à la scalabilité du code.",
+        "image": "https://via.placeholder.com/350x150",
+        "isPublished": false,
+        "comment": "",
+        "likes": 300
+      }
+    ]
+  }
