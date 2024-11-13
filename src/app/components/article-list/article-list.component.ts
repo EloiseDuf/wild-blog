@@ -24,9 +24,12 @@ export class ArticleListComponent {
     console.log(this.notificationLikefromArticle);
   }
 
-  constructor(private http: HttpClient) {
-    this.articles$=this.http.get<Article[]>('http://localhost:3000/articles').pipe(
+   constructor(private http: HttpClient) {
+    this.articles$=this.getArticles();
+   }
+
+  getArticles(){
+    return this.http.get<Article[]>('http://localhost:3000/articles').pipe(
       map((data) => data.filter(article => article.isPublished===true)));
-    ;
   }
 }
