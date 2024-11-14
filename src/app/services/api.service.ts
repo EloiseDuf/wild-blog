@@ -13,7 +13,7 @@ export class ApiService {
 
   private apiUrl="http://localhost:3000/articles";
 
-  getArticles(){
+  getArticles():Observable<Article[]>{
     return this.http.get<Article[]>(`${this.apiUrl}`).pipe(
       map((data) => data.filter(article => article.isPublished===true)));
   }
