@@ -26,18 +26,11 @@ export class ArticlePageComponent {
   ngOnInit() { 
     this.route.paramMap.subscribe((params: ParamMap) => { 
       this.articleId = Number(params.get('id')); 
-      if (this.articleId) { 
-        this.article$ = this.getArticleById(this.articleId).pipe( 
-          map(articles => { const article = articles[0]; 
-            return article; 
-          })
-          
-     ); 
-    } 
+      this.article$ = this.getArticleById(this.articleId) 
   }); 
 }
 
-  getArticleById(id: number): Observable<Article[]> { 
-    return this.http.get<Article[]>(`http://localhost:3000/articles?id=${id}`);
+  getArticleById(id: number): Observable<Article> { 
+    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
   }
 }
