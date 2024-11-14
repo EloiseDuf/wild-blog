@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { ArticleComponent } from '../article/article.component';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-article-list',
@@ -24,12 +25,8 @@ export class ArticleListComponent {
     console.log(this.notificationLikefromArticle);
   }
 
-   constructor(private http: HttpClient) {
-    this.articles$=this.getArticles();
+   constructor(private apiService:ApiService,  private http: HttpClient) {
+    this.articles$=this.apiService.getArticles();
    }
 
-  getArticles(){
-    return this.http.get<Article[]>('http://localhost:3000/articles').pipe(
-      map((data) => data.filter(article => article.isPublished===true)));
-  }
 }

@@ -1,10 +1,11 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Article } from '../../models/article.models';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe } from '@angular/common';
 import { ArticleDetailComponent } from '../../components/article-detail/article-detail.component';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-article-page',
@@ -19,18 +20,15 @@ export class ArticlePageComponent {
   @Input() article$! : Observable<Article>;
   
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private apiService:ApiService,  private http: HttpClient, private route: ActivatedRoute) {
     
   }
 
   ngOnInit() { 
     this.route.paramMap.subscribe((params: ParamMap) => { 
       this.articleId = Number(params.get('id')); 
-      this.article$ = this.getArticleById(this.articleId) 
+      this.article$ = this.apiService.getArticleById(this.articleId) 
   }); 
 }
 
-  getArticleById(id: number): Observable<Article> { 
-    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
-  }
 }
