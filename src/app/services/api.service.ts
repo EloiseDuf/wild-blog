@@ -11,17 +11,13 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
 
-  private apiUrl="http://localhost:3000/articles";
+  private apiUrl="http://localhost:8080/";
 
   getArticles():Observable<Article[]>{
-    return this.http.get<Article[]>(`${this.apiUrl}`).pipe(
-      map((data) => data.filter(article => article.isPublished===true)));
+    return this.http.get<Article[]>(`${this.apiUrl}articles`);
   }
 
   getArticleById(id: number): Observable<Article> { 
-    return this.http.get<Article>(`${this.apiUrl}/${id}`);
+    return this.http.get<Article>(`${this.apiUrl}articles/${id}`);
   }
-
-
-
 }

@@ -1,7 +1,21 @@
 <div class="homeContener">
         <h1>{{title}}</h1>
-        <a [routerLink]="['/contact']"><h2>Contact</h2></a>
+
+        @if(!isAuthenticated){
         <a [routerLink]="['/register']"><h2>S'inscrire</h2></a>
+        <a [routerLink]="['/login']"><h2>Se connecter</h2></a>
+        }
+
+        @if(isAuthenticated){
+        
+        <a [routerLink]="['/profile']"><h2>Mon profil : {{role}}</h2></a>
+        
+        <button (click)="logout()" >Se déconnecter</button>
+        }
+        @if(!isAuthenticated){
+        <a [routerLink]="['/contact']"><h2>Contact</h2></a>
+        }
+                
        <app-article-list></app-article-list>
 </div>
 

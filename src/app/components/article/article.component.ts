@@ -17,6 +17,7 @@ export class ArticleComponent {
 textColor:string= "black";
 @Input() article!: Article
 
+
 @Output() notifyLike :EventEmitter<string> = new EventEmitter<string>();
 
 
