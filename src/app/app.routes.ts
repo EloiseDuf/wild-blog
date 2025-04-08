@@ -42,7 +42,7 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminPageComponent,
-        canActivate: [roleGuard('admin')]
+        canActivate: [roleGuard('ADMIN')]
     },
 
     {
