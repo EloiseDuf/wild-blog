@@ -20,7 +20,7 @@ export class ArticlePageComponent {
   @Input() article$! : Observable<Article>;
   
 
-  constructor(private apiService:ApiService,  private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private apiService:ApiService, private route: ActivatedRoute) {
     
   }
 

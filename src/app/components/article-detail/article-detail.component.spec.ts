@@ -1,14 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArticleDetailComponent } from './article-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, provideRouter } from '@angular/router';
 
-describe('ArticleComponentComponent', () => {
+describe('ArticleDetails', () => {
   let component: ArticleDetailComponent;
   let fixture: ComponentFixture<ArticleDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArticleDetailComponent]
+      imports: [ArticleDetailComponent,HttpClientModule],
+      providers: [provideRouter([])]
+
     })
     .compileComponents();
 
