@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ArticleListComponent } from './article-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('ArticleListComponent', () => {
   let component: ArticleListComponent;
@@ -9,7 +10,8 @@ describe('ArticleListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArticleListComponent,HttpClientModule]
+      imports: [ArticleListComponent],
+      providers:[provideHttpClient()]
     })
     .compileComponents();
 

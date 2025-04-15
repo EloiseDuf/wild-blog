@@ -1,23 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { roleGuard } from './role.guard';
 
 describe('roleGuard', () => {
   const executeGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => 
-      TestBed.runInInjectionContext(() => roleGuard('admin')(route, state)); // Passer 'admin' comme rôle
+      TestBed.runInInjectionContext(() => roleGuard('admin')(route, state));
 
   beforeEach(() => {
-    TestBed.configureTestingModule({imports: [HttpClientTestingModule]});
+    TestBed.configureTestingModule({providers:[provideHttpClientTesting]});
   });
 
   it('should be created', () => {
-    const route = {} as ActivatedRouteSnapshot; // Simuler un objet route
-    const state = {} as RouterStateSnapshot;   // Simuler un objet state
+    const route = {} as ActivatedRouteSnapshot;
+    const state = {} as RouterStateSnapshot; 
 
-    const result = executeGuard(route, state); // Appeler executeGuard avec les bons paramètres
+    const result = executeGuard(route, state); 
 
-    expect(result).toBeTruthy(); // Vérifier que la fonction retourne quelque chose
+    expect(result).toBeTruthy(); 
   });
 });

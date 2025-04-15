@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
 describe('HomePageComponent', () => {
@@ -10,8 +10,8 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomePageComponent,HttpClientModule],
-      providers: [provideRouter([])]
+      imports: [HomePageComponent],
+      providers: [provideRouter([]),provideHttpClient()]
     })
     .compileComponents();
 
