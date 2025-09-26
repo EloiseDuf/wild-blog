@@ -1,0 +1,7 @@
+<div class="articleContener" >
+    @if(article$ |async; as article){
+        <app-article-detail-component [article]="article"></app-article-detail-component>
+    } @else {
+        <p>Aucun article</p>
+}
+</div>

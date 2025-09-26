@@ -1,0 +1,28 @@
+<div class="homeContener">
+        <h1>{{title}}</h1>
+
+                @if(!isAuthenticated){
+                        <a [routerLink]="['/register']"><h2>S'inscrire</h2></a>
+                        <a [routerLink]="['/login']"><h2>Se connecter</h2></a>
+                }
+
+                @if(isAuthenticated){
+                        <a [routerLink]="['/profile']"><h2>Mon profil : {{role}}</h2></a>
+                }
+
+                @if(!isAuthenticated){
+                        <a [routerLink]="['/contact']"><h2>Contact</h2></a>
+                }
+        
+                @if(isAuthenticated && role==="ADMIN"){
+                        <a [routerLink]="['/admin']"><h2>Dashboard Administrateur</h2></a>
+                }
+
+                @if(isAuthenticated){
+                        <button (click)="logout()" >Se déconnecter</button>
+                } 
+
+        <app-article-list></app-article-list>
+</div>
+
+
