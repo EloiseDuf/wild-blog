@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
-import { HttpClientTestingModule, provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 import { roleGuard } from './role.guard';
 
@@ -9,7 +9,7 @@ describe('roleGuard', () => {
       TestBed.runInInjectionContext(() => roleGuard('admin')(route, state));
 
   beforeEach(() => {
-    TestBed.configureTestingModule({providers:[provideHttpClientTesting]});
+    TestBed.configureTestingModule({providers:[provideHttpClient()]});
   });
 
   it('should be created', () => {
