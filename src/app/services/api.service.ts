@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { map, Observable } from 'rxjs';
 import { Article } from '../models/article.models';
 import { HttpClient } from '@angular/common/http';
@@ -10,14 +11,13 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-
-  private apiUrl="http://localhost:8080/";
+  private baseUrl = environment.apiUrl;
 
   getArticles():Observable<Article[]>{
-    return this.http.get<Article[]>(`${this.apiUrl}articles`);
+    return this.http.get<Article[]>(`${this.baseUrl}articles`);
   }
 
   getArticleById(id: number): Observable<Article> { 
-    return this.http.get<Article>(`${this.apiUrl}articles/${id}`);
+    return this.http.get<Article>(`${this.baseUrl}articles/${id}`);
   }
 }
