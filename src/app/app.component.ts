@@ -12,6 +12,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 })
 export class AppComponent {
 
+  title = 'Bienvenue sur le Wild Blog de Eloïse !';
+
 }
 
 
