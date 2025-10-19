@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ArticleDetailComponent } from './article-detail.component';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
-import { ActivatedRoute, provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { Article } from '../../models/article.models';
 
 describe('ArticleDetails', () => {
   let component: ArticleDetailComponent;
@@ -11,14 +11,22 @@ describe('ArticleDetails', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ArticleDetailComponent],
-      providers: [provideRouter([]),provideHttpClient()]
-
-    })
-    .compileComponents();
+      providers: [provideRouter([]), provideHttpClient()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ArticleDetailComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+
+    // ✅ Initialisation avant le rendu
+    component.article = {
+      id: 1,
+      title: 'Titre test',
+      content: 'Contenu test',
+      likes: 0,
+      isPublished: false
+    } as Article;
+
+    fixture.detectChanges(); // on rend après avoir injecté l’article
   });
 
   it('should create', () => {
