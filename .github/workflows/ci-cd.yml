@@ -34,7 +34,7 @@ jobs:
   deploy:
     name: 🚀 Déploiement sur le VPS
     needs: build-and-test
-    if: github.ref == 'refs/heads/main'
+    if: github.ref_name == 'main' && github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:
